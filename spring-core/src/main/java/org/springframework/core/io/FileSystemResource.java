@@ -23,9 +23,11 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URI;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.nio.channels.FileChannel;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.WritableByteChannel;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystem;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
@@ -186,6 +188,7 @@ public class FileSystemResource extends AbstractResource implements WritableReso
 	@Override
 	public InputStream getInputStream() throws IOException {
 		try {
+      validatePath(this.filePath.toFile());
 			return Files.newInputStream(this.filePath);
 		}
 		catch (NoSuchFileException ex) {
@@ -213,6 +216,7 @@ public class FileSystemResource extends AbstractResource implements WritableReso
 	 */
 	@Override
 	public OutputStream getOutputStream() throws IOException {
+    validatePath(this.file != null ? this.file : this.filePath.toFile());
 		return Files.newOutputStream(this.filePath);
 	}
 
@@ -248,9 +252,24 @@ public class FileSystemResource extends AbstractResource implements WritableReso
 	 * This implementation returns the underlying File reference.
 	 */
 	@Override
-	public File getFile() {
-		return (this.file != null ? this.file : this.filePath.toFile());
+	public File getFile() throws NoSuchFileException {
+		return validatePath(this.file != null ? this.file : this.filePath.toFile());
 	}
+
+  // Path validation logic
+  private File validatePath(File requestedFile) throws NoSuchFileException {
+    Path path = requestedFile.toPath().toAbsolutePath().normalize();
+    if ((requestedFile.getAbsolutePath().indexOf("..") > -1) && (StringUtils.cleanPath(requestedFile.getAbsolutePath()).contains("../") || StringUtils.cleanPath(requestedFile.getAbsolutePath()).contains("..\\"))) {
+      throw new NoSuchFileException("Access denied: Path traversal attempt detected, on path : " + path);
+    }
+    
+    String decodedPath = URLDecoder.decode(requestedFile.getAbsolutePath(), StandardCharsets.UTF_8);
+    if (decodedPath.contains("../") || decodedPath.contains("..\\")) {
+      throw new NoSuchFileException("Access denied: Path traversal attempt detected, on path : " + path);
+    }
+    
+    return requestedFile;
+  }
 
 	/**
 	 * This implementation opens a FileChannel for the underlying file.
@@ -259,6 +278,7 @@ public class FileSystemResource extends AbstractResource implements WritableReso
 	@Override
 	public ReadableByteChannel readableChannel() throws IOException {
 		try {
+      validatePath(this.filePath.toFile());
 			return FileChannel.open(this.filePath, StandardOpenOption.READ);
 		}
 		catch (NoSuchFileException ex) {
@@ -272,6 +292,7 @@ public class FileSystemResource extends AbstractResource implements WritableReso
 	 */
 	@Override
 	public WritableByteChannel writableChannel() throws IOException {
+    validatePath(this.filePath.toFile());
 		return FileChannel.open(this.filePath, StandardOpenOption.WRITE);
 	}
 
