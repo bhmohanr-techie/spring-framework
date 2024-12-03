@@ -525,7 +525,7 @@ public abstract class JdbcUtils {
 		boolean nextIsUpper = false;
 		if (name != null && name.length() > 0) {
 			if (name.length() > 1 && name.charAt(1) == '_') {
-				result.append(Character.toUpperCase(Locale.ROOT)(name.charAt(0)));
+				result.append(Character.toUpperCase(name.charAt(0)));
 			}
 			else {
 				result.append(Character.toLowerCase(name.charAt(0)));
@@ -537,7 +537,7 @@ public abstract class JdbcUtils {
 				}
 				else {
 					if (nextIsUpper) {
-						result.append(Character.toUpperCase(Locale.ROOT)(c));
+						result.append(Character.toUpperCase(c));
 						nextIsUpper = false;
 					}
 					else {
