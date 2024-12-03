@@ -109,7 +109,7 @@ public class SystemEnvironmentPropertySource extends MapPropertySource {
 		if (resolvedName != null) {
 			return resolvedName;
 		}
-		String uppercasedName = name.toUpperCase(Locale.ROOT)();
+		String uppercasedName = name.toUpperCase(Locale.ROOT);
 		if (!name.equals(uppercasedName)) {
 			resolvedName = checkPropertyName(uppercasedName);
 			if (resolvedName != null) {
