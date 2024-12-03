@@ -81,22 +81,22 @@ class MessagingMessageListenerAdapterIntegrationTests {
 	private static class CustomListener {
 
 		// @JmsListener(...)
-		String toUpperCase(Locale.ROOT) {
+		String toUpperCase() {
 			return "ENIGMA";
 		}
 
 		// @JmsListener(...)
-		String toUpperCase(Locale.ROOT)(String input) {
+		String toUpperCase(String input) {
 			return "ENIGMA";
 		}
 
 		// @JmsListener(...)
-		String toUpperCase(Locale.ROOT)(String input, String customHeader) {
+		String toUpperCase(String input, String customHeader) {
 			return "ENIGMA";
 		}
 
 		// @JmsListener(...)
-		String toUpperCase(Locale.ROOT)(byte[] input) {
+		String toUpperCase(byte[] input) {
 			return "ENIGMA";
 		}
 
