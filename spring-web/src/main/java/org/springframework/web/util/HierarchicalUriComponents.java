@@ -361,8 +361,8 @@ final class HierarchicalUriComponents extends UriComponents {
 			}
 			else {
 				baos.write('%');
-				char hex1 = Character.toUpperCase(Locale.ROOT)(Character.forDigit((b >> 4) & 0xF, 16));
-				char hex2 = Character.toUpperCase(Locale.ROOT)(Character.forDigit(b & 0xF, 16));
+				char hex1 = Character.toUpperCase(Character.forDigit((b >> 4) & 0xF, 16));
+				char hex2 = Character.toUpperCase(Character.forDigit(b & 0xF, 16));
 				baos.write(hex1);
 				baos.write(hex2);
 			}
