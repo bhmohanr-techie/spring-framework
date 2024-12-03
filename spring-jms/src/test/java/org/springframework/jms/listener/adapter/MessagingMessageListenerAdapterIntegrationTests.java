@@ -18,7 +18,6 @@ package org.springframework.jms.listener.adapter;
 
 import java.lang.reflect.Method;
 import java.util.stream.Stream;
-import java.util.Locale;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
