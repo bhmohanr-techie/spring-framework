@@ -45,7 +45,7 @@ public class SpelParserConfiguration {
 	static {
 		String compilerMode = SpringProperties.getProperty(SPRING_EXPRESSION_COMPILER_MODE_PROPERTY_NAME);
 		defaultCompilerMode = (compilerMode != null ?
-				SpelCompilerMode.valueOf(compilerMode.toUpperCase()) : SpelCompilerMode.OFF);
+				SpelCompilerMode.valueOf(compilerMode.toUpperCase(Locale.ROOT)()) : SpelCompilerMode.OFF);
 	}
 
 

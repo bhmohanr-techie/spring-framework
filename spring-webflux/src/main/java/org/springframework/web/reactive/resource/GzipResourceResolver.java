@@ -69,7 +69,7 @@ public class GzipResourceResolver extends AbstractResourceResolver {
 
 	private boolean isGzipAccepted(ServerWebExchange exchange) {
 		String value = exchange.getRequest().getHeaders().getFirst("Accept-Encoding");
-		return (value != null && value.toLowerCase().contains("gzip"));
+		return (value != null && value.toLowerCase(Locale.ROOT).contains("gzip"));
 	}
 
 	@Override

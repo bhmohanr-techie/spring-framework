@@ -315,7 +315,7 @@ class MockHttpServletRequestTests {
 			// Create the request after changing the default locale.
 			MockHttpServletRequest request = new MockHttpServletRequest();
 			assertThat(newDefaultLocale.equals(request.getLocale())).isFalse();
-			assertThat(request.getLocale()).isEqualTo(Locale.ENGLISH);
+			assertThat(request.getLocale()).isEqualTo(Locale.ROOT);
 		}
 		finally {
 			Locale.setDefault(originalDefaultLocale);
@@ -355,14 +355,14 @@ class MockHttpServletRequestTests {
 	@Test
 	void invalidAcceptLanguageHeader() {
 		request.addHeader("Accept-Language", "en_US");
-		assertThat(request.getLocale()).isEqualTo(Locale.ENGLISH);
+		assertThat(request.getLocale()).isEqualTo(Locale.ROOT);
 		assertThat(request.getHeader("Accept-Language")).isEqualTo("en_US");
 	}
 
 	@Test
 	void emptyAcceptLanguageHeader() {
 		request.addHeader("Accept-Language", "");
-		assertThat(request.getLocale()).isEqualTo(Locale.ENGLISH);
+		assertThat(request.getLocale()).isEqualTo(Locale.ROOT);
 		assertThat(request.getHeader("Accept-Language")).isEqualTo("");
 	}
 

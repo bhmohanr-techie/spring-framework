@@ -282,7 +282,7 @@ public class RequestMappingHandlerMappingTests {
 		RequestMappingHandlerMapping mapping = new RequestMappingHandlerMapping();
 		mapping.setApplicationContext(new StaticWebApplicationContext());
 
-		String methodName = requestMethod.name().toLowerCase();
+		String methodName = requestMethod.name().toLowerCase(Locale.ROOT);
 		String path = "/" + methodName;
 
 		return assertComposedAnnotationMapping(mapping, methodName, path, requestMethod);

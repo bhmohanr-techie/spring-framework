@@ -151,7 +151,7 @@ public @interface TestConstructor {
 				return null;
 			}
 			try {
-				return AutowireMode.valueOf(name.trim().toUpperCase());
+				return AutowireMode.valueOf(name.trim().toUpperCase(Locale.ROOT)());
 			}
 			catch (IllegalArgumentException ex) {
 				Log logger = LogFactory.getLog(AutowireMode.class);

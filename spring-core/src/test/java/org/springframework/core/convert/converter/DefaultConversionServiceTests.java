@@ -270,7 +270,7 @@ class DefaultConversionServiceTests {
 
 	@Test
 	void stringToLocale() {
-		assertThat(conversionService.convert("en", Locale.class)).isEqualTo(Locale.ENGLISH);
+		assertThat(conversionService.convert("en", Locale.class)).isEqualTo(Locale.ROOT);
 	}
 
 	@Test

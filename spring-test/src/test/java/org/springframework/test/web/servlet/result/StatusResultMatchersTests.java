@@ -73,7 +73,7 @@ public class StatusResultMatchersTests {
 	}
 
 	private Method getMethodForHttpStatus(HttpStatus status) throws NoSuchMethodException {
-		String name = status.name().toLowerCase().replace("_", "-");
+		String name = status.name().toLowerCase(Locale.ROOT).replace("_", "-");
 		name = "is" + StringUtils.capitalize(Conventions.attributeNameToPropertyName(name));
 		return StatusResultMatchers.class.getMethod(name);
 	}

@@ -40,7 +40,7 @@ public class ItemPet {
 	}
 
 	public String getLabel() {
-		return this.name.toUpperCase();
+		return this.name.toUpperCase(Locale.ROOT)();
 	}
 
 	@Override

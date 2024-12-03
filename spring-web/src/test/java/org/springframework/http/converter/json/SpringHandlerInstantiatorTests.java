@@ -274,7 +274,7 @@ public class SpringHandlerInstantiatorTests {
 	public static class Capitalizer {
 
 		public String capitalize(String text) {
-			return text.toUpperCase();
+			return text.toUpperCase(Locale.ROOT)();
 		}
 	}
 

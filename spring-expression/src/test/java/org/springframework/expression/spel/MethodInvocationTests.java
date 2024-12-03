@@ -60,7 +60,7 @@ public class MethodInvocationTests extends AbstractExpressionTests {
 	public void testStringClass() {
 		evaluate("new java.lang.String('hello').charAt(2)", 'l', Character.class);
 		evaluate("new java.lang.String('hello').charAt(2).equals('l'.charAt(0))", true, Boolean.class);
-		evaluate("'HELLO'.toLowerCase()", "hello", String.class);
+		evaluate("'HELLO'.toLowerCase(Locale.ROOT)", "hello", String.class);
 		evaluate("'   abcba '.trim()", "abcba", String.class);
 	}
 

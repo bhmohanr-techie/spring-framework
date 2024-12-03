@@ -115,7 +115,7 @@ public abstract class SqlParameterSourceUtils {
 		String[] paramNames = parameterSource.getParameterNames();
 		if (paramNames != null) {
 			for (String name : paramNames) {
-				caseInsensitiveParameterNames.put(name.toLowerCase(), name);
+				caseInsensitiveParameterNames.put(name.toLowerCase(Locale.ROOT), name);
 			}
 		}
 		return caseInsensitiveParameterNames;

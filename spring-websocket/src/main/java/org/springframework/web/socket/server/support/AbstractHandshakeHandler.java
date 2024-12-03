@@ -192,7 +192,7 @@ public abstract class AbstractHandshakeHandler implements HandshakeHandler, Life
 	public void setSupportedProtocols(String... protocols) {
 		this.supportedProtocols.clear();
 		for (String protocol : protocols) {
-			this.supportedProtocols.add(protocol.toLowerCase());
+			this.supportedProtocols.add(protocol.toLowerCase(Locale.ROOT));
 		}
 	}
 
@@ -367,10 +367,10 @@ public abstract class AbstractHandshakeHandler implements HandshakeHandler, Life
 	protected String selectProtocol(List<String> requestedProtocols, WebSocketHandler webSocketHandler) {
 		List<String> handlerProtocols = determineHandlerSupportedProtocols(webSocketHandler);
 		for (String protocol : requestedProtocols) {
-			if (handlerProtocols.contains(protocol.toLowerCase())) {
+			if (handlerProtocols.contains(protocol.toLowerCase(Locale.ROOT))) {
 				return protocol;
 			}
-			if (this.supportedProtocols.contains(protocol.toLowerCase())) {
+			if (this.supportedProtocols.contains(protocol.toLowerCase(Locale.ROOT))) {
 				return protocol;
 			}
 		}

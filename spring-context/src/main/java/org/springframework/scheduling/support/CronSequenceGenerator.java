@@ -305,8 +305,8 @@ public class CronSequenceGenerator {
 	private String replaceOrdinals(String value, String commaSeparatedList) {
 		String[] list = StringUtils.commaDelimitedListToStringArray(commaSeparatedList);
 		for (int i = 0; i < list.length; i++) {
-			String item = list[i].toUpperCase();
-			value = StringUtils.replace(value.toUpperCase(), item, "" + i);
+			String item = list[i].toUpperCase(Locale.ROOT)();
+			value = StringUtils.replace(value.toUpperCase(Locale.ROOT)(), item, "" + i);
 		}
 		return value;
 	}

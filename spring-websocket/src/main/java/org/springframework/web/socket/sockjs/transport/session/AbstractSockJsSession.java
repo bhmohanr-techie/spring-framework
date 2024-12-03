@@ -364,7 +364,7 @@ public abstract class AbstractSockJsSession implements SockJsSession {
 
 	private boolean indicatesDisconnectedClient(Throwable ex)  {
 		String message = NestedExceptionUtils.getMostSpecificCause(ex).getMessage();
-		message = (message != null ? message.toLowerCase() : "");
+		message = (message != null ? message.toLowerCase(Locale.ROOT) : "");
 		String className = ex.getClass().getSimpleName();
 		return (message.contains("broken pipe") || DISCONNECTED_CLIENT_EXCEPTIONS.contains(className));
 	}

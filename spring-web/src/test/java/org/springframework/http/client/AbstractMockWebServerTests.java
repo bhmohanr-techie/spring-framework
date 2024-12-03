@@ -97,7 +97,7 @@ public abstract class AbstractMockWebServerTests {
 					return new MockResponse().setResponseCode(200);
 				}
 				else if(request.getPath().startsWith("/methods/")) {
-					String expectedMethod = request.getPath().replace("/methods/","").toUpperCase();
+					String expectedMethod = request.getPath().replace("/methods/","").toUpperCase(Locale.ROOT)();
 					assertThat(request.getMethod()).isEqualTo(expectedMethod);
 					return new MockResponse();
 				}

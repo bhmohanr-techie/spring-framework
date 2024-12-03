@@ -279,10 +279,10 @@ public class GenericCallMetaDataProvider implements CallMetaDataProvider {
 			return null;
 		}
 		else if (isStoresUpperCaseIdentifiers()) {
-			return identifierName.toUpperCase();
+			return identifierName.toUpperCase(Locale.ROOT)();
 		}
 		else if (isStoresLowerCaseIdentifiers()) {
-			return identifierName.toLowerCase();
+			return identifierName.toLowerCase(Locale.ROOT);
 		}
 		else {
 			return identifierName;

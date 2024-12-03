@@ -6580,7 +6580,7 @@ public class SpelCompilationCoverageTests extends AbstractExpressionTests {
 		}
 
 		public String bar(String arg) {
-			return arg.toUpperCase();
+			return arg.toUpperCase(Locale.ROOT)();
 		}
 	}
 

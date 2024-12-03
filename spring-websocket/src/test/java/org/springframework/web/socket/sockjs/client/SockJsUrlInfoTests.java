@@ -74,7 +74,7 @@ class SockJsUrlInfoTests {
 		SockJsUrlInfo info = new SockJsUrlInfo(new URI(scheme + "://example.com"));
 		String serverId = info.getServerId();
 		String sessionId = info.getSessionId();
-		String transport = transportType.toString().toLowerCase();
+		String transport = transportType.toString().toLowerCase(Locale.ROOT);
 		URI expected = new URI(expectedScheme + "://example.com/" + serverId + "/" + sessionId + "/" + transport);
 		assertThat(info.getTransportUrl(transportType)).isEqualTo(expected);
 	}

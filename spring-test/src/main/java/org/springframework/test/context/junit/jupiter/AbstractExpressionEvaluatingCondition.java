@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
  *
  * <ul>
  * <li>Spring Expression Language (SpEL) expression &mdash; for example:
- * <pre style="code">#{systemProperties['os.name'].toLowerCase().contains('mac')}</pre>
+ * <pre style="code">#{systemProperties['os.name'].toLowerCase(Locale.ROOT).contains('mac')}</pre>
  * <li>Placeholder for a property available in the Spring
  * {@link org.springframework.core.env.Environment Environment} &mdash; for example:
  * <pre style="code">${smoke.tests.enabled}</pre>
@@ -193,7 +193,7 @@ abstract class AbstractExpressionEvaluatingCondition implements ExecutionConditi
 			return (Boolean) result;
 		}
 		else if (result instanceof String) {
-			String str = ((String) result).trim().toLowerCase();
+			String str = ((String) result).trim().toLowerCase(Locale.ROOT);
 			if ("true".equals(str)) {
 				return true;
 			}

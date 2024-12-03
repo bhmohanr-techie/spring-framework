@@ -59,11 +59,11 @@ class MessagingMessageListenerAdapterIntegrationTests {
 
 
 	private static Stream<Arguments> subscriptionNames() {
-		String method1 = "toUpperCase";
-		String method2 = "toUpperCase(java.lang.String)";
-		String method3 = "toUpperCase(java.lang.String,int)";
-		String method4 = "toUpperCase(java.lang.String[])";
-		String expectedName = CustomListener.class.getName() + ".toUpperCase";
+		String method1 = "toUpperCase(Locale.ROOT)";
+		String method2 = "toUpperCase(Locale.ROOT)(java.lang.String)";
+		String method3 = "toUpperCase(Locale.ROOT)(java.lang.String,int)";
+		String method4 = "toUpperCase(Locale.ROOT)(java.lang.String[])";
+		String expectedName = CustomListener.class.getName() + ".toUpperCase(Locale.ROOT)";
 		return Stream.of(
 				arguments(named(method1, findMethod()), expectedName),
 				arguments(named(method2, findMethod(String.class)), expectedName),
@@ -72,7 +72,7 @@ class MessagingMessageListenerAdapterIntegrationTests {
 	}
 
 	private static Method findMethod(Class<?>... paramTypes) {
-		return ReflectionUtils.findMethod(CustomListener.class, "toUpperCase", paramTypes);
+		return ReflectionUtils.findMethod(CustomListener.class, "toUpperCase(Locale.ROOT)", paramTypes);
 	}
 
 
@@ -80,22 +80,22 @@ class MessagingMessageListenerAdapterIntegrationTests {
 	private static class CustomListener {
 
 		// @JmsListener(...)
-		String toUpperCase() {
+		String toUpperCase(Locale.ROOT)() {
 			return "ENIGMA";
 		}
 
 		// @JmsListener(...)
-		String toUpperCase(String input) {
+		String toUpperCase(Locale.ROOT)(String input) {
 			return "ENIGMA";
 		}
 
 		// @JmsListener(...)
-		String toUpperCase(String input, String customHeader) {
+		String toUpperCase(Locale.ROOT)(String input, String customHeader) {
 			return "ENIGMA";
 		}
 
 		// @JmsListener(...)
-		String toUpperCase(byte[] input) {
+		String toUpperCase(Locale.ROOT)(byte[] input) {
 			return "ENIGMA";
 		}
 

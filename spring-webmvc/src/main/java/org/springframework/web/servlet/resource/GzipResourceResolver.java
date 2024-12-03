@@ -70,7 +70,7 @@ public class GzipResourceResolver extends AbstractResourceResolver {
 
 	private boolean isGzipAccepted(HttpServletRequest request) {
 		String value = request.getHeader("Accept-Encoding");
-		return (value != null && value.toLowerCase().contains("gzip"));
+		return (value != null && value.toLowerCase(Locale.ROOT).contains("gzip"));
 	}
 
 	@Override

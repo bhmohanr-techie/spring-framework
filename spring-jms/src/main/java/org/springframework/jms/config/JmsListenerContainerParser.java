@@ -154,7 +154,7 @@ class JmsListenerContainerParser extends AbstractListenerContainerParser {
 				}
 			}
 			else {
-				properties.add("cacheLevelName", "CACHE_" + cache.toUpperCase());
+				properties.add("cacheLevelName", "CACHE_" + cache.toUpperCase(Locale.ROOT)());
 			}
 		}
 

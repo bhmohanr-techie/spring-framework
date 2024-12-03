@@ -234,7 +234,7 @@ public final class Conventions {
 				upperCaseNext = true;
 			}
 			else if (upperCaseNext) {
-				result[currPos++] = Character.toUpperCase(c);
+				result[currPos++] = Character.toUpperCase(Locale.ROOT)(c);
 				upperCaseNext = false;
 			}
 			else {

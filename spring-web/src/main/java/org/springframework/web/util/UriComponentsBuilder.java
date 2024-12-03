@@ -291,7 +291,7 @@ public class UriComponentsBuilder implements UriBuilder, Cloneable {
 		if (matcher.matches()) {
 			UriComponentsBuilder builder = new UriComponentsBuilder();
 			String scheme = matcher.group(1);
-			builder.scheme(scheme != null ? scheme.toLowerCase() : null);
+			builder.scheme(scheme != null ? scheme.toLowerCase(Locale.ROOT) : null);
 			builder.userInfo(matcher.group(4));
 			String host = matcher.group(5);
 			checkSchemeAndHost(httpUrl, scheme, host);

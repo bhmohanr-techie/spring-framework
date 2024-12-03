@@ -2947,7 +2947,7 @@ class MergedAnnotationsTests {
 		 */
 		@Override
 		public String toString() {
-			return "method: " + name().toLowerCase();
+			return "method: " + name().toLowerCase(Locale.ROOT);
 		}
 	}
 

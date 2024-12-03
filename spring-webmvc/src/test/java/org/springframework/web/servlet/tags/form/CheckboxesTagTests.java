@@ -798,12 +798,12 @@ public class CheckboxesTagTests extends AbstractFormTagTests {
 
 		@Override
 		public void setAsText(String text) throws IllegalArgumentException {
-			setValue(text.toLowerCase());
+			setValue(text.toLowerCase(Locale.ROOT));
 		}
 
 		@Override
 		public String getAsText() {
-			return ObjectUtils.nullSafeToString(getValue()).toUpperCase();
+			return ObjectUtils.nullSafeToString(getValue()).toUpperCase(Locale.ROOT)();
 		}
 	}
 

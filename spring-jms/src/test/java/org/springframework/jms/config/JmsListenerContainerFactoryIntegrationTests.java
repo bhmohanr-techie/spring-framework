@@ -180,13 +180,13 @@ public class JmsListenerContainerFactoryIntegrationTests {
 
 		@Override
 		public Message toMessage(Object object, Session session) throws JMSException, MessageConversionException {
-			return new StubTextMessage(object.toString().toUpperCase());
+			return new StubTextMessage(object.toString().toUpperCase(Locale.ROOT)());
 		}
 
 		@Override
 		public Object fromMessage(Message message) throws JMSException, MessageConversionException {
 			String content = ((TextMessage) message).getText();
-			return content.toUpperCase();
+			return content.toUpperCase(Locale.ROOT)();
 		}
 	}
 

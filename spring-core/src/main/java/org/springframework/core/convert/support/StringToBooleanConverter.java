@@ -55,7 +55,7 @@ final class StringToBooleanConverter implements Converter<String, Boolean> {
 		if (value.isEmpty()) {
 			return null;
 		}
-		value = value.toLowerCase();
+		value = value.toLowerCase(Locale.ROOT);
 		if (trueValues.contains(value)) {
 			return Boolean.TRUE;
 		}

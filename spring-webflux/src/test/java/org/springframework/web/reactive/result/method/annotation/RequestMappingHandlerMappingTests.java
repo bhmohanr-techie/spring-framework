@@ -152,7 +152,7 @@ public class RequestMappingHandlerMappingTests {
 
 
 	private RequestMappingInfo assertComposedAnnotationMapping(RequestMethod requestMethod) throws Exception {
-		String methodName = requestMethod.name().toLowerCase();
+		String methodName = requestMethod.name().toLowerCase(Locale.ROOT);
 		String path = "/" + methodName;
 
 		return assertComposedAnnotationMapping(methodName, path, requestMethod);

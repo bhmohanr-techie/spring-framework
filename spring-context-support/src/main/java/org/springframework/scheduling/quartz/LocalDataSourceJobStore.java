@@ -155,7 +155,7 @@ public class LocalDataSourceJobStore extends JobStoreCMT {
 			String productName = JdbcUtils.extractDatabaseMetaData(this.dataSource,
 					DatabaseMetaData::getDatabaseProductName);
 			productName = JdbcUtils.commonDatabaseName(productName);
-			if (productName != null && productName.toLowerCase().contains("hsql")) {
+			if (productName != null && productName.toLowerCase(Locale.ROOT).contains("hsql")) {
 				setUseDBLocks(false);
 				setLockHandler(new SimpleSemaphore());
 			}

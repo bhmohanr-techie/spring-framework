@@ -34,7 +34,7 @@ public class ConstructorPersonWithSetters {
 
 
 	public ConstructorPersonWithSetters(String name, long age, Date birthDate, BigDecimal balance) {
-		this.name = name.toUpperCase();
+		this.name = name.toUpperCase(Locale.ROOT)();
 		this.age = age;
 		this.birthDate = birthDate;
 		this.balance = balance;

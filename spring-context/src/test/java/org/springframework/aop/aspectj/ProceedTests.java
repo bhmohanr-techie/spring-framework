@@ -163,7 +163,7 @@ class ProceedTestingAspect implements Ordered {
 	public int getOrder() { return this.order; }
 
 	public Object capitalize(ProceedingJoinPoint pjp, String value) throws Throwable {
-		return pjp.proceed(new Object[] {value.toUpperCase()});
+		return pjp.proceed(new Object[] {value.toUpperCase(Locale.ROOT)()});
 	}
 
 	public Object doubleOrQuits(ProceedingJoinPoint pjp) throws Throwable {

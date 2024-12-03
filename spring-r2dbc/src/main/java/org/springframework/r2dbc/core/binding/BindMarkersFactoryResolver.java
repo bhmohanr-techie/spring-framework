@@ -114,7 +114,7 @@ public final class BindMarkersFactoryResolver {
 	static class BuiltInBindMarkersFactoryProvider implements BindMarkerFactoryProvider {
 
 		private static final Map<String, BindMarkersFactory> BUILTIN =
-				new LinkedCaseInsensitiveMap<>(Locale.ENGLISH);
+				new LinkedCaseInsensitiveMap<>(Locale.ROOT);
 
 		static {
 			BUILTIN.put("H2", BindMarkersFactory.indexed("$", 1));

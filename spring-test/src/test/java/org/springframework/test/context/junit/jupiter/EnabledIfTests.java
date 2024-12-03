@@ -111,7 +111,7 @@ class EnabledIfTests {
 		@Test
 		@EnabledOnMac
 		void enabledIfWithSpelOsCheckInCustomComposedAnnotation() {
-			String os = System.getProperty("os.name").toLowerCase();
+			String os = System.getProperty("os.name").toLowerCase(Locale.ROOT);
 			assertThat(os).as("This test must be enabled on Mac OS").contains("mac");
 			assertThat(os).as("This test must be disabled on Windows").doesNotContain("win");
 		}

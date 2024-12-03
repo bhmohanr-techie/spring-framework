@@ -441,7 +441,7 @@ class PropertySourceAnnotationTests {
 				@Override
 				public Object getProperty(String name) {
 					String value = props.getProperty(name);
-					return (value != null ? value.toUpperCase() : null);
+					return (value != null ? value.toUpperCase(Locale.ROOT)() : null);
 				}
 			};
 		}

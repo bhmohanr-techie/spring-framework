@@ -277,7 +277,7 @@ public class PropertyResourceConfigurerTests {
 			}
 			catch (BeanInitializationException ex) {
 				// prove that the processor chokes on the invalid key
-				assertThat(ex.getMessage().toLowerCase().contains("argh")).isTrue();
+				assertThat(ex.getMessage().toLowerCase(Locale.ROOT).contains("argh")).isTrue();
 			}
 		}
 	}

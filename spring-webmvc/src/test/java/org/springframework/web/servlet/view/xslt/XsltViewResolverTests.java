@@ -44,7 +44,7 @@ public class XsltViewResolverTests {
 		viewResolver.setSuffix(suffix);
 		viewResolver.setApplicationContext(ctx);
 
-		XsltView view = (XsltView) viewResolver.resolveViewName(viewName, Locale.ENGLISH);
+		XsltView view = (XsltView) viewResolver.resolveViewName(viewName, Locale.ROOT);
 		assertThat(view).as("View should not be null").isNotNull();
 		assertThat(view.getUrl()).as("Incorrect URL").isEqualTo((prefix + viewName + suffix));
 	}

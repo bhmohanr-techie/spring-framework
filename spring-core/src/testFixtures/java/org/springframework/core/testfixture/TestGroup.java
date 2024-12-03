@@ -85,7 +85,7 @@ public enum TestGroup {
 		if ("ALL".equalsIgnoreCase(value)) {
 			return EnumSet.allOf(TestGroup.class);
 		}
-		if (value.toUpperCase().startsWith("ALL-")) {
+		if (value.toUpperCase(Locale.ROOT)().startsWith("ALL-")) {
 			Set<TestGroup> groups = EnumSet.allOf(TestGroup.class);
 			groups.removeAll(parseGroups(originalValue, value.substring(4)));
 			return groups;
@@ -97,7 +97,7 @@ public enum TestGroup {
 		Set<TestGroup> groups = new HashSet<>();
 		for (String group : value.split(",")) {
 			try {
-				groups.add(valueOf(group.trim().toUpperCase()));
+				groups.add(valueOf(group.trim().toUpperCase(Locale.ROOT)()));
 			}
 			catch (IllegalArgumentException ex) {
 				throw new IllegalArgumentException(format(

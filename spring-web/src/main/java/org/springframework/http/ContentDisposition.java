@@ -548,8 +548,8 @@ public final class ContentDisposition {
 			}
 			else {
 				sb.append('%');
-				char hex1 = Character.toUpperCase(Character.forDigit((b >> 4) & 0xF, 16));
-				char hex2 = Character.toUpperCase(Character.forDigit(b & 0xF, 16));
+				char hex1 = Character.toUpperCase(Locale.ROOT)(Character.forDigit((b >> 4) & 0xF, 16));
+				char hex2 = Character.toUpperCase(Locale.ROOT)(Character.forDigit(b & 0xF, 16));
 				sb.append(hex1);
 				sb.append(hex2);
 			}

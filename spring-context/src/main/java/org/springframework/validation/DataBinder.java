@@ -464,7 +464,7 @@ public class DataBinder implements PropertyEditorRegistry, TypeConverter {
 	 * <p>The default implementation of this method stores disallowed field patterns
 	 * in {@linkplain PropertyAccessorUtils#canonicalPropertyName(String) canonical}
 	 * form. As of Spring Framework 5.2.21, the default implementation also transforms
-	 * disallowed field patterns to {@linkplain String#toLowerCase() lowercase} to
+	 * disallowed field patterns to {@linkplain String#toLowerCase(Locale.ROOT) lowercase} to
 	 * support case-insensitive pattern matching in {@link #isAllowed}. Subclasses
 	 * which override this method must therefore take both of these transformations
 	 * into account.
@@ -482,7 +482,7 @@ public class DataBinder implements PropertyEditorRegistry, TypeConverter {
 		else {
 			String[] fieldPatterns = new String[disallowedFields.length];
 			for (int i = 0; i < fieldPatterns.length; i++) {
-				fieldPatterns[i] = PropertyAccessorUtils.canonicalPropertyName(disallowedFields[i]).toLowerCase();
+				fieldPatterns[i] = PropertyAccessorUtils.canonicalPropertyName(disallowedFields[i]).toLowerCase(Locale.ROOT);
 			}
 			this.disallowedFields = fieldPatterns;
 		}
@@ -825,7 +825,7 @@ public class DataBinder implements PropertyEditorRegistry, TypeConverter {
 		String[] allowed = getAllowedFields();
 		String[] disallowed = getDisallowedFields();
 		return ((ObjectUtils.isEmpty(allowed) || PatternMatchUtils.simpleMatch(allowed, field)) &&
-				(ObjectUtils.isEmpty(disallowed) || !PatternMatchUtils.simpleMatch(disallowed, field.toLowerCase())));
+				(ObjectUtils.isEmpty(disallowed) || !PatternMatchUtils.simpleMatch(disallowed, field.toLowerCase(Locale.ROOT))));
 	}
 
 	/**

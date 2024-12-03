@@ -600,47 +600,47 @@ public class RequestMappingMessageConversionIntegrationTests extends AbstractReq
 
 		@PostMapping("/person")
 		public Person transformPerson(@RequestBody Person person) {
-			return new Person(person.getName().toUpperCase());
+			return new Person(person.getName().toUpperCase(Locale.ROOT)());
 		}
 
 		@PostMapping("/completable-future")
 		public CompletableFuture<Person> transformCompletableFuture(@RequestBody CompletableFuture<Person> future) {
-			return future.thenApply(person -> new Person(person.getName().toUpperCase()));
+			return future.thenApply(person -> new Person(person.getName().toUpperCase(Locale.ROOT)()));
 		}
 
 		@PostMapping("/mono")
 		public Mono<Person> transformMono(@RequestBody Mono<Person> personFuture) {
-			return personFuture.map(person -> new Person(person.getName().toUpperCase()));
+			return personFuture.map(person -> new Person(person.getName().toUpperCase(Locale.ROOT)()));
 		}
 
 		@PostMapping("/single")
 		public Single<Person> transformSingle(@RequestBody Single<Person> personFuture) {
-			return personFuture.map(person -> new Person(person.getName().toUpperCase()));
+			return personFuture.map(person -> new Person(person.getName().toUpperCase(Locale.ROOT)()));
 		}
 
 		@PostMapping("/maybe")
 		public Maybe<Person> transformMaybe(@RequestBody Maybe<Person> personFuture) {
-			return personFuture.map(person -> new Person(person.getName().toUpperCase()));
+			return personFuture.map(person -> new Person(person.getName().toUpperCase(Locale.ROOT)()));
 		}
 
 		@PostMapping("/publisher")
 		public Publisher<Person> transformPublisher(@RequestBody Publisher<Person> persons) {
-			return Flux.from(persons).map(person -> new Person(person.getName().toUpperCase()));
+			return Flux.from(persons).map(person -> new Person(person.getName().toUpperCase(Locale.ROOT)()));
 		}
 
 		@PostMapping("/flux")
 		public Flux<Person> transformFlux(@RequestBody Flux<Person> persons) {
-			return persons.map(person -> new Person(person.getName().toUpperCase()));
+			return persons.map(person -> new Person(person.getName().toUpperCase(Locale.ROOT)()));
 		}
 
 		@PostMapping("/observable")
 		public Observable<Person> transformObservable(@RequestBody Observable<Person> persons) {
-			return persons.map(person -> new Person(person.getName().toUpperCase()));
+			return persons.map(person -> new Person(person.getName().toUpperCase(Locale.ROOT)()));
 		}
 
 		@PostMapping("/flowable")
 		public Flowable<Person> transformFlowable(@RequestBody Flowable<Person> persons) {
-			return persons.map(person -> new Person(person.getName().toUpperCase()));
+			return persons.map(person -> new Person(person.getName().toUpperCase(Locale.ROOT)()));
 		}
 	}
 

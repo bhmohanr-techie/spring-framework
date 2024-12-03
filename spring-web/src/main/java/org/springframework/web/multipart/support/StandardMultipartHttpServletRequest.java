@@ -119,7 +119,7 @@ public class StandardMultipartHttpServletRequest extends AbstractMultipartHttpSe
 	protected void handleParseFailure(Throwable ex) {
 		String msg = ex.getMessage();
 		if (msg != null) {
-			msg = msg.toLowerCase();
+			msg = msg.toLowerCase(Locale.ROOT);
 			if (msg.contains("size") && msg.contains("exceed")) {
 				throw new MaxUploadSizeExceededException(-1, ex);
 			}

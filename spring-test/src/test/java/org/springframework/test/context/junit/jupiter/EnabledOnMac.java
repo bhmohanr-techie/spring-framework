@@ -33,6 +33,6 @@ import java.lang.annotation.Target;
 @Target({ ElementType.TYPE, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@EnabledIf(expression = "#{systemProperties['os.name'].toLowerCase().contains('mac')}", reason = "Enabled on Mac OS")
+@EnabledIf(expression = "#{systemProperties['os.name'].toLowerCase(Locale.ROOT).contains('mac')}", reason = "Enabled on Mac OS")
 public @interface EnabledOnMac {
 }

@@ -44,7 +44,7 @@ import org.springframework.core.annotation.AliasFor;
  * {@literal @}Target({ElementType.TYPE, ElementType.METHOD})
  * {@literal @}Retention(RetentionPolicy.RUNTIME)
  * {@literal @}EnabledIf(
- *     expression = "#{systemProperties['os.name'].toLowerCase().contains('mac')}",
+ *     expression = "#{systemProperties['os.name'].toLowerCase(Locale.ROOT).contains('mac')}",
  *     reason = "Enabled on Mac OS"
  * )
  * public {@literal @}interface EnabledOnMac {}
@@ -93,7 +93,7 @@ public @interface EnabledIf {
 	 *
 	 * <ul>
 	 * <li>Spring Expression Language (SpEL) expression &mdash; for example:
-	 * <pre style="code">@EnabledIf("#{systemProperties['os.name'].toLowerCase().contains('mac')}")</pre>
+	 * <pre style="code">@EnabledIf("#{systemProperties['os.name'].toLowerCase(Locale.ROOT).contains('mac')}")</pre>
 	 * <li>Placeholder for a property available in the Spring
 	 * {@link org.springframework.core.env.Environment Environment} &mdash; for example:
 	 * <pre style="code">@EnabledIf("${smoke.tests.enabled}")</pre>

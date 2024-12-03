@@ -190,7 +190,7 @@ public class StompHeaderAccessorTests {
 
 		StompHeaderAccessor headers = StompHeaderAccessor.create(StompCommand.SUBSCRIBE, extHeaders);
 		String accountId = headers.getFirstNativeHeader("accountId");
-		headers.setNativeHeader("accountId", accountId.toLowerCase());
+		headers.setNativeHeader("accountId", accountId.toLowerCase(Locale.ROOT));
 
 		Map<String, List<String>> actual = headers.toNativeHeaderMap();
 		assertThat(actual.size()).isEqualTo(3);

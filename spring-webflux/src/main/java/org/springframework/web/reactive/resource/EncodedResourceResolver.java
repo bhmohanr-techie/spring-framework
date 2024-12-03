@@ -168,7 +168,7 @@ public class EncodedResourceResolver extends AbstractResourceResolver {
 	private String getAcceptEncoding(ServerWebExchange exchange) {
 		ServerHttpRequest request = exchange.getRequest();
 		String header = request.getHeaders().getFirst(HttpHeaders.ACCEPT_ENCODING);
-		return (header != null ? header.toLowerCase() : null);
+		return (header != null ? header.toLowerCase(Locale.ROOT) : null);
 	}
 
 	private String getExtension(String coding) {

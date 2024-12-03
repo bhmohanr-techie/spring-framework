@@ -85,10 +85,10 @@ class TestConstructorUtilsTests {
 		setGlobalFlag(ALL.name());
 		assertAutowirable(testClass);
 
-		setGlobalFlag(ALL.name().toLowerCase());
+		setGlobalFlag(ALL.name().toLowerCase(Locale.ROOT));
 		assertAutowirable(testClass);
 
-		setGlobalFlag("\t" + ALL.name().toLowerCase() + "   ");
+		setGlobalFlag("\t" + ALL.name().toLowerCase(Locale.ROOT) + "   ");
 		assertAutowirable(testClass);
 
 		setGlobalFlag("bogus");
