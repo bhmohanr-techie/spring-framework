@@ -551,7 +551,7 @@ public abstract class StringUtils {
 
 	/**
 	 * Capitalize a {@code String}, changing the first letter to
-	 * upper case as per {@link Character#toUpperCase(Locale.ROOT)(char)}.
+	 * upper case as per {@link Character#toUpperCase(char)}.
 	 * No other letters are changed.
 	 * @param str the {@code String} to capitalize
 	 * @return the capitalized {@code String}
@@ -579,7 +579,7 @@ public abstract class StringUtils {
 		char baseChar = str.charAt(0);
 		char updatedChar;
 		if (capitalize) {
-			updatedChar = Character.toUpperCase(Locale.ROOT)(baseChar);
+			updatedChar = Character.toUpperCase(baseChar);
 		}
 		else {
 			updatedChar = Character.toLowerCase(baseChar);
