@@ -17,6 +17,7 @@
 package org.springframework.core.convert.support;
 
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
 
 import org.springframework.core.convert.converter.Converter;
