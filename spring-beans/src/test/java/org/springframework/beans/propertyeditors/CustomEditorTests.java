@@ -322,10 +322,10 @@ class CustomEditorTests {
 		assertThat(((Boolean) editor.getValue()).booleanValue()).isFalse();
 		assertThat(editor.getAsText()).isEqualTo(falseString);
 
-		editor.setAsText(trueString.toUpperCase(Locale.ROOT)());
+		editor.setAsText(trueString.toUpperCase(Locale.ROOT));
 		assertThat(((Boolean) editor.getValue()).booleanValue()).isTrue();
 		assertThat(editor.getAsText()).isEqualTo(trueString);
-		editor.setAsText(falseString.toUpperCase(Locale.ROOT)());
+		editor.setAsText(falseString.toUpperCase(Locale.ROOT));
 		assertThat(((Boolean) editor.getValue()).booleanValue()).isFalse();
 		assertThat(editor.getAsText()).isEqualTo(falseString);
 		assertThatIllegalArgumentException().isThrownBy(() ->
