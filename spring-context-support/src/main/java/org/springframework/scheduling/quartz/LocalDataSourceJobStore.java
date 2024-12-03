@@ -19,6 +19,7 @@ package org.springframework.scheduling.quartz;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
+import java.util.Locale;
 
 import javax.sql.DataSource;
 

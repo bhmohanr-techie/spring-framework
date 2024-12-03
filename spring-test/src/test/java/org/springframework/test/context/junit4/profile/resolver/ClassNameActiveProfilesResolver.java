@@ -16,6 +16,8 @@
 
 package org.springframework.test.context.junit4.profile.resolver;
 
+import java.util.Locale;
+
 import org.springframework.test.context.ActiveProfilesResolver;
 
 /**

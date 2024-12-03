@@ -16,6 +16,8 @@
 
 package org.springframework.expression.spel;
 
+import java.util.Locale;
+
 import org.springframework.core.SpringProperties;
 import org.springframework.lang.Nullable;
 

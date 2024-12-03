@@ -17,6 +17,7 @@
 package org.springframework.http.client;
 
 import java.util.Collections;
+import java.util.Locale;
 
 import okhttp3.mockwebserver.Dispatcher;
 import okhttp3.mockwebserver.MockResponse;
@@ -97,7 +98,7 @@ public abstract class AbstractMockWebServerTests {
 					return new MockResponse().setResponseCode(200);
 				}
 				else if(request.getPath().startsWith("/methods/")) {
-					String expectedMethod = request.getPath().replace("/methods/","").toUpperCase(Locale.ROOT)();
+					String expectedMethod = request.getPath().replace("/methods/","").toUpperCase(Locale.ROOT);
 					assertThat(request.getMethod()).isEqualTo(expectedMethod);
 					return new MockResponse();
 				}

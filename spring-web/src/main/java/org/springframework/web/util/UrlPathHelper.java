@@ -19,6 +19,7 @@ package org.springframework.web.util;
 import java.net.URLDecoder;
 import java.nio.charset.UnsupportedCharsetException;
 import java.util.Map;
+import java.util.Locale;
 import java.util.Properties;
 
 import javax.servlet.RequestDispatcher;

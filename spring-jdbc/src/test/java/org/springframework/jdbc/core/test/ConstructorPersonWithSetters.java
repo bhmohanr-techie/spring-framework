@@ -18,6 +18,7 @@ package org.springframework.jdbc.core.test;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * @author Juergen Hoeller

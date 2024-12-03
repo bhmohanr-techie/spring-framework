@@ -20,6 +20,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Locale;
 
 import org.springframework.jdbc.core.SqlParameterValue;
 import org.springframework.lang.Nullable;

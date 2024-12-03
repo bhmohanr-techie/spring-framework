@@ -17,6 +17,7 @@
 package org.springframework.web.servlet.tags.form;
 
 import java.beans.PropertyEditorSupport;
+import java.util.Locale;
 
 import org.springframework.util.ObjectUtils;
 
@@ -40,7 +41,7 @@ public class ItemPet {
 	}
 
 	public String getLabel() {
-		return this.name.toUpperCase(Locale.ROOT)();
+		return this.name.toUpperCase(Locale.ROOT);
 	}
 
 	@Override

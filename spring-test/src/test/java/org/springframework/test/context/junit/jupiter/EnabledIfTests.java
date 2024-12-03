@@ -16,6 +16,8 @@
 
 package org.springframework.test.context.junit.jupiter;
 
+import java.util.Locale;
+
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 

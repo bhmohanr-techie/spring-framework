@@ -17,6 +17,7 @@
 package org.springframework.web.socket.sockjs.client;
 
 import java.net.URI;
+import java.util.Locale;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

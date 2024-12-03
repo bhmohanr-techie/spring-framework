@@ -24,6 +24,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.Locale;
 import java.util.Properties;
 
 import javax.inject.Inject;

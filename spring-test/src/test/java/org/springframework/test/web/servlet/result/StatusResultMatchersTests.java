@@ -19,6 +19,7 @@ package org.springframework.test.web.servlet.result;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import org.junit.jupiter.api.Test;
 

@@ -16,6 +16,8 @@
 
 package org.springframework.web.socket.sockjs.frame;
 
+import java.util.Locale;
+
 import org.springframework.util.Assert;
 
 /**

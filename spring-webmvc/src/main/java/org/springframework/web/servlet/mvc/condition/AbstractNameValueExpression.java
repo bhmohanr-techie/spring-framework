@@ -16,6 +16,8 @@
 
 package org.springframework.web.servlet.mvc.condition;
 
+import java.util.Locale;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.lang.Nullable;

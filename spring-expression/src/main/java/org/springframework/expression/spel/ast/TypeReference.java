@@ -17,6 +17,7 @@
 package org.springframework.expression.spel.ast;
 
 import java.lang.reflect.Array;
+import java.util.Locale;
 
 import org.springframework.asm.MethodVisitor;
 import org.springframework.asm.Type;

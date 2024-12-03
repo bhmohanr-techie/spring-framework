@@ -16,6 +16,8 @@
 
 package org.springframework.aop.aspectj;
 
+import java.util.Locale;
+
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.junit.jupiter.api.AfterEach;

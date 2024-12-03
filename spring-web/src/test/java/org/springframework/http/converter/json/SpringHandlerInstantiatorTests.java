@@ -19,6 +19,7 @@ package org.springframework.http.converter.json;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -274,7 +275,7 @@ public class SpringHandlerInstantiatorTests {
 	public static class Capitalizer {
 
 		public String capitalize(String text) {
-			return text.toUpperCase(Locale.ROOT)();
+			return text.toUpperCase(Locale.ROOT);
 		}
 	}
 

@@ -18,6 +18,7 @@ package org.springframework.web.server.adapter;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
 
 import org.apache.commons.logging.Log;

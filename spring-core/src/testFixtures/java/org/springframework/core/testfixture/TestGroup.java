@@ -19,6 +19,7 @@ package org.springframework.core.testfixture;
 import java.util.Collections;
 import java.util.EnumSet;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
 
 import org.springframework.util.StringUtils;

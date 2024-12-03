@@ -17,6 +17,7 @@
 package org.springframework.test.context.junit4.profile.resolver;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

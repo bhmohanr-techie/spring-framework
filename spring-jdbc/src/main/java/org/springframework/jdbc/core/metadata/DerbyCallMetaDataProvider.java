@@ -18,6 +18,7 @@ package org.springframework.jdbc.core.metadata;
 
 import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
+import java.util.Locale;
 
 import org.springframework.lang.Nullable;
 

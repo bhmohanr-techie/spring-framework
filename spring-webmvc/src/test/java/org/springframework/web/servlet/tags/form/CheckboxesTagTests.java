@@ -803,7 +803,7 @@ public class CheckboxesTagTests extends AbstractFormTagTests {
 
 		@Override
 		public String getAsText() {
-			return ObjectUtils.nullSafeToString(getValue()).toUpperCase(Locale.ROOT)();
+			return ObjectUtils.nullSafeToString(getValue()).toUpperCase(Locale.ROOT);
 		}
 	}
 

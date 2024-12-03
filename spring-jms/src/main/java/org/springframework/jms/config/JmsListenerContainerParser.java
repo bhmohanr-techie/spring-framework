@@ -16,6 +16,8 @@
 
 package org.springframework.jms.config;
 
+import java.util.Locale;
+
 import javax.jms.Session;
 
 import org.w3c.dom.Element;
