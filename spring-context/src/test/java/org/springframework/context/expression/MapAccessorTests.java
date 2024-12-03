@@ -49,14 +49,14 @@ public class MapAccessorTests {
 		assertThat(ex.getValue(sec,testMap)).isEqualTo("bar");
 
 		// compound expression
-		ex = sep.parseExpression("foo.toUpperCase(Locale.ROOT)()");
+		ex = sep.parseExpression("foo.toUpperCase(Locale.ROOT)");
 		assertThat(ex.getValue(sec,testMap)).isEqualTo("BAR");
 		assertThat(SpelCompiler.compile(ex)).isTrue();
 		assertThat(ex.getValue(sec,testMap)).isEqualTo("BAR");
 
 		// nested map
 		Map<String,Map<String,Object>> nestedMap = getNestedTestMap();
-		ex = sep.parseExpression("aaa.foo.toUpperCase(Locale.ROOT)()");
+		ex = sep.parseExpression("aaa.foo.toUpperCase(Locale.ROOT)");
 		assertThat(ex.getValue(sec,nestedMap)).isEqualTo("BAR");
 		assertThat(SpelCompiler.compile(ex)).isTrue();
 		assertThat(ex.getValue(sec,nestedMap)).isEqualTo("BAR");

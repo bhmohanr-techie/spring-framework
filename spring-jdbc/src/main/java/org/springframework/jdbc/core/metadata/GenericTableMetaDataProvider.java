@@ -231,7 +231,7 @@ public class GenericTableMetaDataProvider implements TableMetaDataProvider {
 			return null;
 		}
 		else if (isStoresUpperCaseIdentifiers()) {
-			return tableName.toUpperCase(Locale.ROOT)();
+			return tableName.toUpperCase(Locale.ROOT);
 		}
 		else if (isStoresLowerCaseIdentifiers()) {
 			return tableName.toLowerCase(Locale.ROOT);
@@ -248,7 +248,7 @@ public class GenericTableMetaDataProvider implements TableMetaDataProvider {
 			return null;
 		}
 		else if (isStoresUpperCaseIdentifiers()) {
-			return catalogName.toUpperCase(Locale.ROOT)();
+			return catalogName.toUpperCase(Locale.ROOT);
 		}
 		else if (isStoresLowerCaseIdentifiers()) {
 			return catalogName.toLowerCase(Locale.ROOT);
@@ -265,7 +265,7 @@ public class GenericTableMetaDataProvider implements TableMetaDataProvider {
 			return null;
 		}
 		else if (isStoresUpperCaseIdentifiers()) {
-			return schemaName.toUpperCase(Locale.ROOT)();
+			return schemaName.toUpperCase(Locale.ROOT);
 		}
 		else if (isStoresLowerCaseIdentifiers()) {
 			return schemaName.toLowerCase(Locale.ROOT);
@@ -323,10 +323,10 @@ public class GenericTableMetaDataProvider implements TableMetaDataProvider {
 				tmd.setSchemaName(tables.getString("TABLE_SCHEM"));
 				tmd.setTableName(tables.getString("TABLE_NAME"));
 				if (tmd.getSchemaName() == null) {
-					tableMeta.put(this.userName != null ? this.userName.toUpperCase(Locale.ROOT)() : "", tmd);
+					tableMeta.put(this.userName != null ? this.userName.toUpperCase(Locale.ROOT) : "", tmd);
 				}
 				else {
-					tableMeta.put(tmd.getSchemaName().toUpperCase(Locale.ROOT)(), tmd);
+					tableMeta.put(tmd.getSchemaName().toUpperCase(Locale.ROOT), tmd);
 				}
 			}
 		}
@@ -353,7 +353,7 @@ public class GenericTableMetaDataProvider implements TableMetaDataProvider {
 			Map<String, TableMetaData> tableMeta) {
 
 		if (schemaName != null) {
-			TableMetaData tmd = tableMeta.get(schemaName.toUpperCase(Locale.ROOT)());
+			TableMetaData tmd = tableMeta.get(schemaName.toUpperCase(Locale.ROOT));
 			if (tmd == null) {
 				throw new DataAccessResourceFailureException("Unable to locate table meta-data for '" +
 						tableName + "' in the '" + schemaName + "' schema");
@@ -366,7 +366,7 @@ public class GenericTableMetaDataProvider implements TableMetaDataProvider {
 		else {
 			TableMetaData tmd = tableMeta.get(getDefaultSchema());
 			if (tmd == null) {
-				tmd = tableMeta.get(this.userName != null ? this.userName.toUpperCase(Locale.ROOT)() : "");
+				tmd = tableMeta.get(this.userName != null ? this.userName.toUpperCase(Locale.ROOT) : "");
 			}
 			if (tmd == null) {
 				tmd = tableMeta.get("PUBLIC");

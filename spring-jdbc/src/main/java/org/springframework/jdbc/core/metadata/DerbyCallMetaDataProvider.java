@@ -46,7 +46,7 @@ public class DerbyCallMetaDataProvider extends GenericCallMetaDataProvider {
 
 		// Use current user schema if no schema specified...
 		String userName = getUserName();
-		return (userName != null ? userName.toUpperCase(Locale.ROOT)() : null);
+		return (userName != null ? userName.toUpperCase(Locale.ROOT) : null);
 	}
 
 }

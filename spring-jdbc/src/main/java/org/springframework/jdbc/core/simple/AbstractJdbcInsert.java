@@ -464,7 +464,7 @@ public abstract class AbstractJdbcInsert {
 			// get generated keys feature. HSQL is one, PostgreSQL is another. Postgres uses a RETURNING
 			// clause while HSQL uses a second query that has to be executed with the same connection.
 
-			if (keyQuery.toUpperCase(Locale.ROOT)().startsWith("RETURNING")) {
+			if (keyQuery.toUpperCase(Locale.ROOT).startsWith("RETURNING")) {
 				Long key = getJdbcTemplate().queryForObject(
 						getInsertString() + " " + keyQuery, Long.class, values.toArray());
 				Map<String, Object> keys = new HashMap<>(2);

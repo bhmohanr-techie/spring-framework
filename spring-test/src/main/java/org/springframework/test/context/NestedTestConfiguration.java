@@ -160,7 +160,7 @@ public @interface NestedTestConfiguration {
 				return null;
 			}
 			try {
-				return EnclosingConfiguration.valueOf(name.trim().toUpperCase(Locale.ROOT)());
+				return EnclosingConfiguration.valueOf(name.trim().toUpperCase(Locale.ROOT));
 			}
 			catch (IllegalArgumentException ex) {
 				Log logger = LogFactory.getLog(EnclosingConfiguration.class);

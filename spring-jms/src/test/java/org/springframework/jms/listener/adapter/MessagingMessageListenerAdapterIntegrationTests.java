@@ -81,7 +81,7 @@ class MessagingMessageListenerAdapterIntegrationTests {
 	private static class CustomListener {
 
 		// @JmsListener(...)
-		String toUpperCase(Locale.ROOT)() {
+		String toUpperCase(Locale.ROOT) {
 			return "ENIGMA";
 		}
 
